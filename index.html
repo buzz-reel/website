@@ -51,16 +51,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);-
 .btn-secondary:hover{border-color:var(--accent);color:var(--text)}
 
 .hero-visual{position:relative;display:flex;justify-content:center}
-.phone-mockup{width:280px;height:560px;background:var(--surface);border-radius:40px;border:2px solid var(--surface2);position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.4)}
-.phone-screen{position:absolute;inset:8px;border-radius:34px;background:linear-gradient(180deg,#1a1512 0%,#0f0d0b 100%);display:flex;flex-direction:column;align-items:center;padding:40px 20px 20px;overflow:hidden}
-.phone-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:100px;height:28px;background:var(--bg);border-radius:0 0 16px 16px;z-index:2}
-.phone-content{width:100%;flex:1;display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.phone-card{width:100%;height:100px;border-radius:12px;position:relative;overflow:hidden}
-.phone-card:nth-child(1){background:linear-gradient(135deg,#dc2626,#f97316);height:140px}
-.phone-card:nth-child(2){background:linear-gradient(135deg,#7c3aed,#2563eb);height:90px}
-.phone-card:nth-child(3){background:linear-gradient(135deg,#059669,#14b8a6);height:90px}
-.phone-card .card-label{position:absolute;bottom:12px;left:14px;font-size:.7rem;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3)}
-.phone-card .card-tag{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.3);padding:2px 8px;border-radius:6px;font-size:.6rem;color:#fff}
+.phone-mockup{width:280px;height:580px;background:var(--surface);border-radius:40px;border:2px solid var(--surface2);position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+.phone-screen{position:absolute;inset:4px;border-radius:36px;overflow:hidden;background:#000}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
 .float-card{position:absolute;background:var(--surface);border:1px solid var(--surface2);border-radius:14px;padding:14px 18px;backdrop-filter:blur(10px);box-shadow:0 8px 30px rgba(0,0,0,.3);animation:float 6s ease-in-out infinite}
 .float-card.c1{top:60px;right:-30px;animation-delay:0s}
 .float-card.c2{bottom:100px;left:-40px;animation-delay:2s}
@@ -87,19 +80,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);-
 .feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
 .feature-card p{color:var(--text2);font-size:.92rem;line-height:1.6}
 
+/* APP PREVIEW */
+.app-preview{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(245,158,11,.03),transparent)}
+.app-preview-inner{max-width:1200px;margin:0 auto;text-align:center}
+.preview-scroll{display:flex;gap:32px;margin-top:56px;overflow-x:auto;padding:20px 0 40px;scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none}
+.preview-scroll::-webkit-scrollbar{display:none}
+.preview-card{flex:0 0 auto;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.preview-phone{width:220px;height:460px;background:var(--surface);border-radius:32px;border:2px solid var(--surface2);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);transition:transform .4s,box-shadow .4s;position:relative}
+.preview-phone:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 30px 80px rgba(245,158,11,.12)}
+.preview-phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;padding:3px}
+.preview-caption{font-size:.95rem;font-weight:600;color:var(--text)}
+.preview-sub{font-size:.8rem;color:var(--text2);margin-top:2px}
+
 /* SHOWCASE */
-.showcase{padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(245,158,11,.03),transparent)}
-.showcase-inner{max-width:1200px;margin:0 auto;text-align:center}
-.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
-.showcase-item{aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:transform .3s}
-.showcase-item:hover{transform:scale(1.03)}
-.showcase-item .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7) 100%);z-index:1}
-.showcase-item .si-title{position:absolute;bottom:16px;left:16px;z-index:2;font-size:.85rem;font-weight:600}
-.showcase-item .si-ep{position:absolute;top:12px;right:12px;z-index:2;background:rgba(245,158,11,.9);padding:2px 10px;border-radius:6px;font-size:.7rem;font-weight:700;color:#0c0a09}
-.showcase-item:nth-child(1){background:linear-gradient(135deg,#991b1b,#dc2626)}
-.showcase-item:nth-child(2){background:linear-gradient(135deg,#312e81,#6366f1)}
-.showcase-item:nth-child(3){background:linear-gradient(135deg,#065f46,#10b981)}
-.showcase-item:nth-child(4){background:linear-gradient(135deg,#78350f,#d97706)}
+.showcase{padding:80px 24px}
+.showcase-inner{max-width:1200px;margin:0 auto}
+.showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:56px}
+.showcase-row.reverse{direction:rtl}
+.showcase-row.reverse > *{direction:ltr}
+.showcase-visual{border-radius:20px;overflow:hidden;border:1px solid var(--surface2);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.showcase-visual img{width:100%;display:block}
+.showcase-text{padding:20px 0}
+.showcase-text h3{font-size:1.6rem;font-weight:700;margin-bottom:14px}
+.showcase-text p{color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:16px}
+.showcase-text ul{list-style:none;padding:0}
+.showcase-text ul li{color:var(--text2);font-size:.92rem;padding:6px 0;padding-left:24px;position:relative}
+.showcase-text ul li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--accent)}
 
 /* STATS */
 .stats{padding:80px 24px}
@@ -130,13 +136,16 @@ footer{border-top:1px solid var(--surface2);padding:40px 24px}
   .hero-actions{justify-content:center}
   .hero-visual{margin-top:40px}
   .features-grid{grid-template-columns:repeat(2,1fr)}
-  .showcase-grid{grid-template-columns:repeat(2,1fr)}
+  .showcase-row{grid-template-columns:1fr;gap:24px}
+  .showcase-row.reverse{direction:ltr}
+  .showcase-visual{max-width:500px;margin:0 auto}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .hero h1{font-size:2.4rem}
   .features-grid{grid-template-columns:1fr}
-  .showcase-grid{grid-template-columns:repeat(2,1fr)}
+  .preview-phone{width:180px;height:380px;border-radius:26px}
+  .preview-scroll{gap:20px}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .nav-links{display:none}
   .footer-inner{flex-direction:column;text-align:center}
@@ -151,7 +160,7 @@ footer{border-top:1px solid var(--surface2);padding:40px 24px}
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#showcase">Discover</a>
-      <a href="BuzzReel/" target="_blank">Privacy</a>
+      <a href="privacy/index.html" target="_blank">Privacy</a>
       <a href="terms.html" target="_blank">Terms</a>
       <a href="#download" class="nav-cta">Get App</a>
     </div>
@@ -177,22 +186,8 @@ footer{border-top:1px solid var(--surface2);padding:40px 24px}
     </div>
     <div class="hero-visual">
       <div class="phone-mockup">
-        <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="phone-content">
-            <div class="phone-card">
-              <span class="card-label">Revenge of the Bride</span>
-              <span class="card-tag">EP 1-30</span>
-            </div>
-            <div class="phone-card">
-              <span class="card-label">Midnight Empire</span>
-              <span class="card-tag">NEW</span>
-            </div>
-            <div class="phone-card">
-              <span class="card-label">Golden Heir</span>
-              <span class="card-tag">HOT</span>
-            </div>
-          </div>
+          <img src="snap/web/buzz1.jpg" alt="BuzzReel Discover Page" loading="eager">
         </div>
       </div>
       <div class="float-card c1">
@@ -247,31 +242,108 @@ footer{border-top:1px solid var(--surface2);padding:40px 24px}
   </div>
 </section>
 
-<section class="showcase" id="showcase">
+<section class="app-preview" id="showcase">
+  <div class="app-preview-inner">
+    <div class="section-label">&#9670; App Preview</div>
+    <h2 class="section-title">Beautiful Interface, Effortless Experience</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto">Every screen is designed for immersion — from discovering new series to binge-watching your favorites.</p>
+    <div class="preview-scroll">
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz1.jpg" alt="Discover Page" loading="lazy">
+        </div>
+        <div class="preview-caption">Discover</div>
+        <div class="preview-sub">Trending & curated picks</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz2.jpg" alt="Hot & Picks" loading="lazy">
+        </div>
+        <div class="preview-caption">For You</div>
+        <div class="preview-sub">Personalized recommendations</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz3.jpg" alt="Video Player" loading="lazy">
+        </div>
+        <div class="preview-caption">Immersive Player</div>
+        <div class="preview-sub">Full-screen HD playback</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz5.jpg" alt="Vertical Shorts" loading="lazy">
+        </div>
+        <div class="preview-caption">Short Reels</div>
+        <div class="preview-sub">Swipe to explore series</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz4.jpg" alt="Playlist Drawer" loading="lazy">
+        </div>
+        <div class="preview-caption">Quick Access</div>
+        <div class="preview-sub">Continue watching & playlists</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-phone">
+          <img src="snap/web/buzz6.jpg" alt="Profile Page" loading="lazy">
+        </div>
+        <div class="preview-caption">Your Profile</div>
+        <div class="preview-sub">Favorites, history & settings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
   <div class="showcase-inner">
-    <div class="section-label">&#9670; Trending Now</div>
-    <h2 class="section-title">What Everyone's Watching</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto">From jaw-dropping plot twists to heart-racing romance — see what's topping the charts this week.</p>
-    <div class="showcase-grid">
-      <div class="showcase-item">
-        <div class="overlay"></div>
-        <span class="si-title">The Secret Wife</span>
-        <span class="si-ep">30 EP</span>
+    <div class="section-label">&#9670; How It Works</div>
+    <h2 class="section-title">Designed for Drama Lovers</h2>
+
+    <div class="showcase-row" style="margin-top:56px">
+      <div class="showcase-visual">
+        <img src="snap/web/buzz3.jpg" alt="Full-screen player with episode details">
       </div>
-      <div class="showcase-item">
-        <div class="overlay"></div>
-        <span class="si-title">Dragon Bloodline</span>
-        <span class="si-ep">24 EP</span>
+      <div class="showcase-text">
+        <h3>Cinema-Quality Player</h3>
+        <p>Tap any episode and dive straight into the action. Our full-screen player puts the story front and center with smooth playback and intuitive controls.</p>
+        <ul>
+          <li>HD playback with adaptive streaming</li>
+          <li>Episode info & synopsis at a glance</li>
+          <li>Like, favorite, and share with one tap</li>
+          <li>Horizontal episode strip for quick navigation</li>
+        </ul>
       </div>
-      <div class="showcase-item">
-        <div class="overlay"></div>
-        <span class="si-title">Stolen Identity</span>
-        <span class="si-ep">18 EP</span>
+    </div>
+
+    <div class="showcase-row reverse" style="margin-top:80px">
+      <div class="showcase-visual">
+        <img src="snap/web/buzz1.jpg" alt="Discover page with curated content">
       </div>
-      <div class="showcase-item">
-        <div class="overlay"></div>
-        <span class="si-title">CEO's Contract</span>
-        <span class="si-ep">36 EP</span>
+      <div class="showcase-text">
+        <h3>Discover What's Next</h3>
+        <p>Your home feed is packed with content tailored to your taste. Continue where you left off, explore trending titles, or dig into curated picks just for you.</p>
+        <ul>
+          <li>Continue Watching for seamless binge sessions</li>
+          <li>Hot series with genre tags</li>
+          <li>Personalized "Picks For You" section</li>
+          <li>Trending chart with episode counts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="showcase-row" style="margin-top:80px">
+      <div class="showcase-visual">
+        <img src="snap/web/buzz6.jpg" alt="Profile page with favorites and history">
+      </div>
+      <div class="showcase-text">
+        <h3>Your Space, Your Way</h3>
+        <p>Everything you care about in one place. Track your favorites, revisit your watch history, and manage your experience from a clean, personal dashboard.</p>
+        <ul>
+          <li>Favorites, Watched, and Liked counts</li>
+          <li>One-tap access to watch history</li>
+          <li>Rate us & share with friends</li>
+          <li>Full settings control</li>
+        </ul>
       </div>
     </div>
   </div>
